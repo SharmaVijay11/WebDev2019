@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">CREATED</th>
+          <th scope="col">DUE</th>
+          <th scope="col">STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{task.id}}</th>
+          <td>{{task.name}}</td>
+          <td>{{task.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>{{task.due_on | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+          <td>{{task.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

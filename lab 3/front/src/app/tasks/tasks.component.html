@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <h4 class="text-uppercase text-center title">tasks</h4>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text text-uppercase">Enter data</span>
+      </div>
+      <input [(ngModel)]="taskName" type="text" placeholder="NAME" class="form-control">
+      <input [(ngModel)]="taskStatus" type="text" placeholder="STATUS" class="form-control">
+      <select class="form-control" [(ngModel)]="selectedTaskListId">
+        <option 
+          *ngFor="let tl of taskLists"
+          >
+          {{tl.id}}
+        </option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-success" type="button" (click)="createTask()">Create</button>
+      </div>
+    </div>
+    
+    
+
+    <div class="list-group mt-2">
+      <a
+        *ngFor="let t of tasks" 
+        routerLink="/tasks/{{t.id}}/" 
+        class="list-group-item list-group-item-action">
+        <label class="col-1"> {{t.id}} </label> 
+        <label class="col-5"> {{t.name | uppercase}} </label>
+        <label class="col-6"> {{t.status | uppercase}} </label>
+      </a>
+    </div>
+  </div>
+</div>

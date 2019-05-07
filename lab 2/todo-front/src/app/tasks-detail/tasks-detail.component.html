@@ -1,0 +1,39 @@
+<div class="row justify-content-center text-center">
+  <div class="col-12 col-md-8">
+    <h4 class="text-center text-uppercase"> <span>{{task.name}}</span>'s details</h4>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">ID</span>
+      </div>
+      <input readonly value="task.id" type="text" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">NAME</span>
+      </div>
+      <input [(ngModel)]="task.name" type="text" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">CREATED</span>
+      </div>
+      <input readonly value={{task.created_at}} type="text" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">DUE ON</span>
+      </div>
+      <input [(ngModel)]="task.due_on" type="text" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">STATUS</span>
+      </div>
+      <input [(ngModel)]="task.status" type="text" class="form-control">
+    </div>
+    <div class="d-flex justify-content-around">
+      <button (click)="updateTask()" class="btn btn-warning text-uppercase">update</button>
+      <button (click)="deleteTask()" class="btn btn-danger text-uppercase">delete</button>
+    </div>
+  </div>
+</div>

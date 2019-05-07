@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+    <h4 class="text-uppercase text-center">task lists</h4>
+    <div class="list-group mt-2">
+      <a
+        *ngFor="let t of taskLists" 
+        routerLink="/task_lists/{{t.id}}/" 
+        class="list-group-item list-group-item-action row">
+        <label class="col-1"> {{t.id}} </label> 
+        <label class="col-11"> {{t.name | uppercase}} </label>
+      </a>
+    </div>
+  </div>
+</div>
